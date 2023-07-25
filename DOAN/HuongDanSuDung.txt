@@ -1,0 +1,19 @@
+Họ và tên sinh viên: Nguyễn Phúc Nguyên
+MSSV: 2021001052
+Đề tài: Xây dựng website bán điện thoại
+
+Lưu ý:
+•	Framework: từ 4.7.2 trở lên
+•	Đối với kết nối cơ sở dữ liệu:
+	-	Attach 2 file .mdf và .ldf được đính kèm vào SQL SERVER của bạn, sau đó tại Visual Studio bạn truy cập Server Explore nhấn chuột phải chọn Add Connection, nhập Server Name của máy bạn, chọn ShopOnline và nhấn OK là đã kết nối thành công
+	-	Truy cập vào mục Web.config tại dòng cuối cùng của Solution Explore và điều chỉnh tên datasource:
+<add name="ShopOnlineConnection" connectionString="Data Source=”Tên data source máy bạn”;Initial Catalog=ShopOnline;Integrated Security=True" providerName="System.Data.SqlClient" />. 
+
+Hướng dẫn sử dụng:
+Để chạy toàn bộ: https://localhost:44310/Home/Index
+Để chạy Admin: https://localhost:44310/Admin/MainAdmin
+ -	Tài khoản admin : admin
+ -	Mật khẩu admin : admin
+
+
+

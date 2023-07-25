@@ -1,0 +1,94 @@
+﻿@model ShopOnlineConnection.SanPham
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Chi tiết sản phẩm</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Tìm kiếm sản phẩm</h2>
+                    <form action="">
+                        <input type="text" placeholder="Nhập thông tin sản phẩm">
+                        <input type="submit" value="Tìm">
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="product-content-right">
+                    <div class="product-breadcroumb">
+                        <a @Html.ActionLink("Trang chủ", "index", "Home") </a>
+                        <a @Html.ActionLink("Sản phẩm", "index", "Shop") </a>
+                        <a href="">@Model.TenSP</a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="product-images">
+                                <div class="product-main-img">
+                                    <img src="~/Asset/img/@Model.HinhChinh" alt="">
+                                </div>
+
+                                <div class="product-gallery">
+                                    <img src="~/Asset/img/@Model.HinhChinh" alt="">
+                                    <img src="~/Asset/img/@Model.HinhChinh" alt="">
+                                    <img src="~/Asset/img/@Model.HinhChinh" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="product-inner">
+                                <h2 class="product-name">@Model.TenSP</h2>
+                                <div class="product-inner-price">
+                                    <ins>@Model.Giá</ins> <del>$100.00</del>
+                                </div>
+
+                                <form action="" class="cart">
+                                    <div class="quantity">
+                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                    </div>
+                                    <button class="add_to_cart_button" type="submit">Thêm vào giỏ hàng</button>
+                                </form>
+
+                                <div class="product-inner-category">
+                                    <p>Loại: <a href="">Chính hãng</a>. Tags: <a href="">best seller</a>, <a href="">mua nhiều nhất</a>, <a href="">sản phẩm hot nhất tuần</a>, <a href="">đánh giá cao</a>. </p>
+                                </div>
+
+
+                                <div role="tabpanel">
+                                    <ul class="product-tab" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
+                                      
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="home">
+                                            <p style="text-align: justify">@Model.CauHinh</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

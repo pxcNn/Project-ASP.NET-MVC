@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ShopOnlineConnection.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Danh sách sản phẩm</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="~/Asset/img/@item.HinhChinh" alt="">
+                        </div>
+                        <h2><a href="@Url.Action("Details", new {id = item.@MaSP})">@item.TenSP</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>@item.Giá</ins>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+        </div>
+    </div>
+</div>

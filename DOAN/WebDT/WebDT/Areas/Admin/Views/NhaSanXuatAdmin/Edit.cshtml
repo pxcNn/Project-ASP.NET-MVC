@@ -1,0 +1,68 @@
+﻿@model ShopOnlineConnection.NhaSanXuat
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #000000;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #778899;
+        }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+<div style="margin:auto;">
+    <h1>Sửa thông tin nhà cung cấp </h1>
+    <br /><br />
+    @using (Html.BeginForm("Edit", "NhaSanXuatAdmin", FormMethod.Post, new { @style = "width:50%; margin:auto; " }))
+    {
+
+        <label for="fname">Mã nhà sản xuất</label>
+        <input type="text" id="fname" name="MaNSS" placeholder="Nhập mã nhà sản xuất" required value="@Model.MaNSS" readonly/>
+
+        <label for="lname">Tên nhà sản xuất</label>
+        <input type="text" id="lname" name="TenNSS" placeholder="Nhập tên nhà sản xuất" required value="@Model.TenNSS"/>
+
+        <label for="country">Tình trạng</label>
+        <select id="country" name="TinhTrangNSS" required>
+            @if (Model.TinhTrangNSS == "1")
+            {
+                <option value="0">Chưa khóa</option>
+                <option value="1" selected>Đã khóa</option>
+            }
+            else
+            {
+                <option value="0" selected>Chưa khóa</option>
+                <option value="1">Đã khóa</option>
+            }
+
+        </select>
+
+        <input type="submit" value="Sửa">
+    }
+
+</div>
+
